@@ -4,8 +4,12 @@ import tailwindcss from '@tailwindcss/vite';
 import { VitePWA } from 'vite-plugin-pwa';
 import path from 'path';
 
+// GitHub Pages runs under /leantrack/ subpath; Vercel & local run under root /
+const isGitHubPages = process.env.GITHUB_PAGES === 'true';
+const basePath = isGitHubPages ? '/leantrack/' : '/';
+
 export default defineConfig({
-  base: '/leantrack/',
+  base: basePath,
   plugins: [
     react(),
     tailwindcss(),
@@ -16,15 +20,15 @@ export default defineConfig({
         name: 'LeanTrack — Fitness & Weight Tracker',
         short_name: 'LeanTrack',
         description: 'iPhone-first fitness tracking PWA for weight loss and strength training',
-        start_url: '/leantrack/',
-        scope: '/leantrack/',
+        start_url: basePath,
+        scope: basePath,
         display: 'standalone',
         background_color: '#0B0D10',
         theme_color: '#0B0D10',
         icons: [
-          { src: '/leantrack/icons/icon-192.png', sizes: '192x192', type: 'image/png' },
-          { src: '/leantrack/icons/icon-512.png', sizes: '512x512', type: 'image/png' },
-          { src: '/leantrack/icons/icon-512-maskable.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
+          { src: `${basePath}icons/icon-192.png`, sizes: '192x192', type: 'image/png' },
+          { src: `${basePath}icons/icon-512.png`, sizes: '512x512', type: 'image/png' },
+          { src: `${basePath}icons/icon-512-maskable.png`, sizes: '512x512', type: 'image/png', purpose: 'maskable' },
         ],
       },
       workbox: {

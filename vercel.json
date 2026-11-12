@@ -1,0 +1,10 @@
+{
+  "buildCommand": "cd leantrack && npm run build",
+  "outputDirectory": "leantrack/dist",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
