@@ -5,7 +5,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 import path from 'path';
 
 export default defineConfig({
-  base: './',
+  base: '/leantrack/',
   plugins: [
     react(),
     tailwindcss(),
@@ -16,15 +16,15 @@ export default defineConfig({
         name: 'LeanTrack — Fitness & Weight Tracker',
         short_name: 'LeanTrack',
         description: 'iPhone-first fitness tracking PWA for weight loss and strength training',
-        start_url: '/',
-        scope: '/',
+        start_url: '/leantrack/',
+        scope: '/leantrack/',
         display: 'standalone',
         background_color: '#0B0D10',
         theme_color: '#0B0D10',
         icons: [
-          { src: '/icons/icon-192.png', sizes: '192x192', type: 'image/png' },
-          { src: '/icons/icon-512.png', sizes: '512x512', type: 'image/png' },
-          { src: '/icons/icon-512-maskable.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
+          { src: '/leantrack/icons/icon-192.png', sizes: '192x192', type: 'image/png' },
+          { src: '/leantrack/icons/icon-512.png', sizes: '512x512', type: 'image/png' },
+          { src: '/leantrack/icons/icon-512-maskable.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
         ],
       },
       workbox: {
