@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0B0D10;
+  --color-surface: #171A1F;
+  --color-surface-raised: #22262C;
+  --color-surface-interactive: #2B3038;
+  --color-border: #343A43;
+  --color-text-primary: #F6F7F9;
+  --color-text-secondary: #A5ADB8;
+  --color-orange: #FF7A2F;
+  --color-orange-soft: #3B251D;
+  --color-blue: #347FEF;
+  --color-blue-soft: #172D50;
+  --color-success: #50C48B;
+  --color-warning: #F0B35A;
+  --color-danger: #EF7272;
+  --radius-card: 24px;
+  --radius-control: 14px;
+}
+
+/* Base styles for the dark app */
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #0B0D10;
+  color: #F6F7F9;
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior: none;
+}
+
+/* Safe area handling for iPhone */
+body {
+  padding-top: env(safe-area-inset-top);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+/* Tabular numbers for metrics */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Touch target minimum */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Hide scrollbar but keep scrolling */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* iOS keyboard safe */
+input, select, textarea {
+  font-size: 16px; /* Prevent iOS zoom on focus */
+}
